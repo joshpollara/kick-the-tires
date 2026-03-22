@@ -4,3 +4,6 @@ drift:
     default:
       tag_query: ''
       schedule: hourly
+    dev-only:
+      tag_query: 'dir:dev'
+      schedule: daily
