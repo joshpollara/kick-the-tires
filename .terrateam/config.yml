@@ -1,3 +1,12 @@
+hooks:
+  all:
+    pre:
+      - type: oidc
+        provider: azure
+        client_id: "897e42ae-3f52-4a66-a3fc-8d9cdb622335"
+        tenant_id: "8141098d-d97f-4af6-b39f-99adc0ec9cd5"
+        subscription_id: "43abe8ae-641c-4cdf-8bac-77e10ac03cdd"
+
 drift:
   enabled: true
   schedules:
