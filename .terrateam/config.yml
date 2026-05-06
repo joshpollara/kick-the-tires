@@ -1,11 +1,12 @@
+default_tf_version: 1.9.8
 engine:
   name: stategraph
-  version: 2.0.0
+  tf_cmd: terraform
 workflows:
   - tag_query: ""
     plan:
       - type: run
-        cmd: ['$TERRATEAM_ROOT/.terrateam/proof.sh', '5-stategraph-version-2.0.0']
+        cmd: ['$TERRATEAM_ROOT/.terrateam/proof.sh', '6-default-tf-version-fallback']
         capture_output: true
       - type: init
       - type: plan
