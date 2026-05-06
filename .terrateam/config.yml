@@ -4,10 +4,7 @@ workflows:
   - tag_query: ""
     plan:
       - type: run
-        cmd:
-          - sh
-          - -c
-          - 'echo "==PROOF=="; echo "scenario=1-minimal"; env | grep -E "^(TF_CMD|TFENV_|TOFUENV_|TG_|STATEGRAPH_|TERRATEAM_TF_CMD|TERRATEAM_ENGINE_NAME)" | sort; echo "--tf-version--"; "${TERRATEAM_TF_CMD:-tofu}" version 2>&1 || true; echo "==END=="'
+        cmd: ['./.terrateam/proof.sh', '1-minimal']
         capture_output: true
       - type: init
       - type: plan
