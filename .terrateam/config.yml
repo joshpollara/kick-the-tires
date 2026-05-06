@@ -1,10 +1,13 @@
+default_tf_version: 1.9.8
 engine:
   name: stategraph
+  tf_cmd: terraform
+  tf_version: 1.9.8
 workflows:
   - tag_query: ""
     plan:
       - type: run
-        cmd: ['$TERRATEAM_ROOT/.terrateam/proof.sh', '1-minimal']
+        cmd: ['$TERRATEAM_ROOT/.terrateam/proof.sh', '2-terraform-pinned-1.9.8']
         capture_output: true
       - type: init
       - type: plan
