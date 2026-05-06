@@ -1,12 +1,14 @@
+default_tf_version: 1.9.8
 engine:
   name: stategraph
-  tf_cmd: tofu
-  tf_version: 1.8.5
+  tf_cmd: terraform
+  tf_version: 1.9.8
+  override_tf_cmd: /github/workspace/.terrateam/my-terraform-wrapper.sh
 workflows:
   - tag_query: ""
     plan:
       - type: run
-        cmd: ['$TERRATEAM_ROOT/.terrateam/proof.sh', '3-tofu-1.8.5']
+        cmd: ['$TERRATEAM_ROOT/.terrateam/proof.sh', '4-override-wrapper']
         capture_output: true
       - type: init
       - type: plan
