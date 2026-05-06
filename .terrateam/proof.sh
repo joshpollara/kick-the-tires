@@ -4,7 +4,7 @@ SCENARIO="${1:-unknown}"
 echo "==PROOF=="
 echo "scenario=${SCENARIO}"
 echo "--env--"
-env | grep -E '^(TF_CMD|TFENV_|TOFUENV_|TG_|STATEGRAPH_|TERRATEAM_TF_CMD|TERRATEAM_ENGINE_NAME|TERRAGRUNT_TFPATH)=' | sort
+env | grep -E '^(TF_CMD|TFENV_[A-Z_]+|TOFUENV_[A-Z_]+|TG_[A-Z_]+|STATEGRAPH_[A-Z_]+|TERRATEAM_TF_CMD|TERRATEAM_ENGINE_NAME|TERRAGRUNT_TFPATH)=' | sort
 echo "--which--"
 echo "TERRATEAM_TF_CMD=${TERRATEAM_TF_CMD:-<unset>}"
 echo "TF_CMD=${TF_CMD:-<unset>}"
