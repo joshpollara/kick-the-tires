@@ -7,8 +7,8 @@ batch_runs:
 dirs:
   payments:
     workspaces:
-      us-east-1:
-      us-west-2:
-      eu-west-1:
-      ap-south-1:
-      sa-east-1:
+      us-east-1: {}
+      us-west-2: {}
+      eu-west-1: {}
+      ap-south-1: {}
+      sa-east-1: {}
