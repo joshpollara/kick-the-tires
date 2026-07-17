@@ -1,0 +1,14 @@
+# One component (payments) with five workspaces. Each workspace runs in its own
+# batch, so it posts as a separate plan comment on the pull request.
+batch_runs:
+  enabled: true
+  max_workspaces_per_batch: 1
+
+dirs:
+  payments:
+    workspaces:
+      us-east-1:
+      us-west-2:
+      eu-west-1:
+      ap-south-1:
+      sa-east-1:
