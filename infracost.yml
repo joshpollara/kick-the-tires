@@ -1,0 +1,7 @@
+# Custom Infracost config provided by the repo — NOT the file Terrateam
+# auto-generates. If this file is honored, the action log will show this
+# project name under "INFRACOST : CONFIG".
+version: 0.1
+projects:
+  - path: dev
+    name: custom-infracost-config-proof

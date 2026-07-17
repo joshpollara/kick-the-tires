@@ -1,0 +1,9 @@
+cost_estimation:
+  enabled: true
+
+hooks:
+  plan:
+    pre:
+      - type: env
+        name: INFRACOST_CONFIG_FILE
+        cmd: ["echo", "infracost.yml"]
