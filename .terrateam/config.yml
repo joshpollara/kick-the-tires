@@ -1,0 +1,5 @@
+# Each directory runs as its own work manifest (its own GitHub Actions run),
+# so the PR fans out into multiple runs.
+batch_runs:
+  enabled: true
+  max_workspaces_per_batch: 1
