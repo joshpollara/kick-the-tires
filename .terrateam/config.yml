@@ -1,0 +1,7 @@
+drift:
+  enabled: true
+  schedules:
+    non-default-codex:
+      branch: test-scheduled-tf
+      tag_query: ''
+      schedule: hourly
