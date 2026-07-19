@@ -1,0 +1,9 @@
+drift:
+  enabled: true
+  schedules:
+    compose-smoke:
+      schedule: hourly
+      branch: test-scheduled-tf
+      tag_query: ''
+engine:
+  name: tofu
