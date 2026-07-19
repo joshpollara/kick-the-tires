@@ -1,5 +1,13 @@
-module "fixture" {
-  source = "../modules"
+terraform {
+  required_providers {
+    null = {
+      source = "hashicorp/null"
+    }
+  }
+}
 
-  null_resource_count = 1
+resource "null_resource" "fixture" {
+  triggers = {
+    fixture = "terragrunt-0.69.3"
+  }
 }
