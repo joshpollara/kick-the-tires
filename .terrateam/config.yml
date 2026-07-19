@@ -1,6 +1,0 @@
-drift:
-  enabled: true
-  schedules:
-    normal-default-codex:
-      tag_query: ''
-      schedule: hourly
