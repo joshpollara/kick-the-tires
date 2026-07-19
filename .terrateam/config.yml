@@ -1,0 +1,40 @@
+default_tf_version: 1.5.7
+
+dirs:
+  tg-new:
+    tags: [tg-new]
+  tg-legacy:
+    tags: [tg-legacy]
+
+workflows:
+  - tag_query: "tg-new"
+    engine:
+      name: terragrunt
+      version: 1.1.1
+      tf_cmd: terraform
+      tf_version: 1.5.7
+    plan:
+      - type: run
+        cmd: ['$TERRATEAM_ROOT/.terrateam/proof.sh', 'terragrunt-1.1.1-workspace']
+        capture_output: true
+      - type: init
+      - type: plan
+    apply:
+      - type: init
+      - type: apply
+
+  - tag_query: "tg-legacy"
+    engine:
+      name: terragrunt
+      version: 0.69.3
+      tf_cmd: terraform
+      tf_version: 1.5.7
+    plan:
+      - type: run
+        cmd: ['$TERRATEAM_ROOT/.terrateam/proof.sh', 'terragrunt-0.69.3-workspace']
+        capture_output: true
+      - type: init
+      - type: plan
+    apply:
+      - type: init
+      - type: apply
