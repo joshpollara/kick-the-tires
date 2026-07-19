@@ -2,6 +2,6 @@ drift:
   enabled: true
   schedules:
     non-default-codex:
-      branch: codex-drift-target-719
+      branch: test-scheduled-tf
       tag_query: ''
       schedule: hourly
