@@ -1,7 +1,6 @@
 # Repro for empty tree_builder output (Avaloq / Livia report).
-# The tree builder emits zero files, which used to be indistinguishable
-# from "tree not built" and produced EXPECTED_BUILT_REPO_TREE.
+# The script emits a bare JSON array of file objects; empty means "no files".
 tree_builder:
   enabled: true
   script: |
-    echo '{"files": []}'
+    echo '[]'
