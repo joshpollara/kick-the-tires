@@ -1,0 +1,7 @@
+engine:
+  name: stategraph
+  version: "2.3.27-rc.6"
+notifications:
+  summary:
+    enabled: true
+    mode: pull_request
