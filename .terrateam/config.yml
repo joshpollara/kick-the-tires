@@ -1,0 +1,6 @@
+notifications:
+  summary:
+    enabled: true
+    mode: pull_request
+batch_runs:
+  enabled: true
