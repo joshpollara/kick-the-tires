@@ -1,0 +1,7 @@
+# Enable the unified pull-request summary comment (#1214).
+# All dirspace results are consolidated into a single, sorted comment that is
+# updated in place, instead of one comment per dirspace.
+notifications:
+  summary:
+    enabled: true
+    mode: pull_request
