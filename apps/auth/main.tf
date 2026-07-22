@@ -1,5 +1,5 @@
 module "auth" {
   source = "../../modules"
 
-  null_resource_count = 5
+  null_resource_count = 9
 }
