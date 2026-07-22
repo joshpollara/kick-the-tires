@@ -1,0 +1,4 @@
+notifications:
+  summary:
+    enabled: true
+    mode: header
