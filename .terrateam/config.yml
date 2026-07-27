@@ -1,0 +1,15 @@
+engine:
+  name: terraform
+
+dirs:
+  tg-1434:
+    tags: [terragrunt]
+    when_modified:
+      file_patterns: ["tg-1434/**"]
+
+workflows:
+  - tag_query: terragrunt
+    engine:
+      name: terragrunt
+      version: 0.67.16
+      tf_version: 1.8.0
