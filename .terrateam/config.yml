@@ -13,3 +13,8 @@ workflows:
       name: terragrunt
       version: 0.67.16
       tf_version: 1.8.0
+    plan:
+      - type: init
+      - type: run
+        cmd: ["terraform", "version"]
+      - type: plan
