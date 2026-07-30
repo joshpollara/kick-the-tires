@@ -3,4 +3,5 @@ apply_requirements:
     - tag_query: ''
       approved:
         enabled: true
+        any_of_count: 0
         require_completed_reviews: true
