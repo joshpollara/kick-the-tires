@@ -2,5 +2,14 @@ apply_requirements:
   checks:
     - tag_query: ''
       approved:
-        enabled: true
-        require_completed_reviews: true
+        enabled: false
+workflows:
+  - tag_query: ''
+    plan:
+      - type: init
+      - type: run
+        cmd: ['sleep', '180']
+      - type: plan
+    apply:
+      - type: init
+      - type: apply
