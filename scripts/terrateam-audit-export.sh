@@ -77,8 +77,19 @@ AUDIT_RECORD="$(jq -n \
     base_branch: $branch,
     sha: $sha,
     actions_run_url: $actions_run,
-    success: $results[0].overall.success,
-    dirspaces: [$results[0].dirspaces[] | {path, workspace, success}]
+    success: ($results[0] | (.overall.success // .success)),
+    dirspaces: ($results[0] |
+      if .dirspaces != null then
+        [.dirspaces[] | {path, workspace, success}]
+      else
+        [.steps[]? | select(.scope.type? == "dirspace")]
+        | group_by([.scope.dir, .scope.workspace])
+        | map({
+            path: .[0].scope.dir,
+            workspace: .[0].scope.workspace,
+            success: (map(.success or (.ignore_errors // false)) | all)
+          })
+      end)
   }')"
 
 echo "Audit record:"
