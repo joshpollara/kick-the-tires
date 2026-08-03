@@ -7,12 +7,20 @@ apply_requirements:
 
 hooks:
   plan:
+    pre:
+      - type: run
+        cmd: ['./scripts/terrateam-audit-export.sh', 'plan']
+        visible_on: always
     post:
       - type: run
         cmd: ['./scripts/terrateam-audit-export.sh', 'plan']
         run_on: always
         visible_on: always
   apply:
+    pre:
+      - type: run
+        cmd: ['./scripts/terrateam-audit-export.sh', 'apply']
+        visible_on: always
     post:
       - type: run
         cmd: ['./scripts/terrateam-audit-export.sh', 'apply']
