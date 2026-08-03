@@ -4,3 +4,17 @@ apply_requirements:
       approved:
         enabled: true
         require_completed_reviews: true
+
+hooks:
+  plan:
+    post:
+      - type: run
+        cmd: ['./scripts/terrateam-audit-export.sh', 'plan']
+        run_on: always
+        visible_on: always
+  apply:
+    post:
+      - type: run
+        cmd: ['./scripts/terrateam-audit-export.sh', 'apply']
+        run_on: always
+        visible_on: always
