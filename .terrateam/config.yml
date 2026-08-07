@@ -15,7 +15,7 @@ hooks:
             https://github.com/joshpollara/kick-the-tires/releases/download/stategraph-dev-1540/stategraph
             -o /usr/local/bin/stategraph
             && chmod +x /usr/local/bin/stategraph
-            && stategraph version
+            && stategraph version client
         run_on: always
 
 workflows:
