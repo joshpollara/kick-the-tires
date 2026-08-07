@@ -1,6 +1,0 @@
-apply_requirements:
-  checks:
-    - tag_query: ''
-      approved:
-        enabled: true
-        require_completed_reviews: true
