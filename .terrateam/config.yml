@@ -1,17 +1,21 @@
 hooks:
   all:
     pre:
+      # TEMPORARY (stategraph/mono#1540): a stategraph CLI built from the
+      # 1540-compaction-preserve-failing-step branch, so the runner has the
+      # actuator fix (mono#1546) rather than pinned release 2.3.35. The asset
+      # is a bare static binary, not the usual tarball. Revert to the pinned
+      # release once #1540 is validated.
       - type: run
         cmd:
           - sh
           - -c
           - >-
             curl -fsSL
-            https://github.com/stategraph/releases/releases/download/2.3.35/stategraph-2.3.35-linux-amd64.tar.gz
-            -o /tmp/stategraph.tar.gz
-            && tar xzf /tmp/stategraph.tar.gz -C /usr/local/bin stategraph
+            https://github.com/joshpollara/kick-the-tires/releases/download/stategraph-dev-1540/stategraph
+            -o /usr/local/bin/stategraph
             && chmod +x /usr/local/bin/stategraph
-            && rm -f /tmp/stategraph.tar.gz
+            && stategraph version
         run_on: always
 
 workflows:
