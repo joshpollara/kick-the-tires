@@ -2,7 +2,7 @@ resource "terraform_data" "vpc" {
   input = {
     vpc_id             = "vpc-0a1b2c3d4e5f6789"
     cidr_block         = "10.0.0.0/16"
-    public_subnet_ids  = ["subnet-pub-a", "subnet-pub-b"]
+    public_subnet_ids  = ["subnet-pub-a", "subnet-pub-b", "subnet-pub-c"]
     private_subnet_ids = ["subnet-prv-a", "subnet-prv-b", "subnet-prv-c"]
   }
 }
