@@ -14,7 +14,11 @@ hooks:
             && rm -f /tmp/stategraph.tar.gz
         run_on: always
 
+lock_policy: merge
+
 workflows:
   - tag_query: "dir:sg"
     engine:
       name: stategraph
+  - tag_query: "dir:dev"
+    lock_policy: none
