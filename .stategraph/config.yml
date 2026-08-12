@@ -33,5 +33,7 @@ stacks:
     sg:
       tag_query: "dir:sg"
       rules:
+        plan_after:
+          - staging
         apply_after:
           - staging
