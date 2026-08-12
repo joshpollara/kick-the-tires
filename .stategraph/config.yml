@@ -1,0 +1,37 @@
+hooks:
+  all:
+    pre:
+      - type: run
+        cmd:
+          - sh
+          - -c
+          - >-
+            curl -fsSL
+            https://github.com/stategraph/releases/releases/download/2.3.35/stategraph-2.3.35-linux-amd64.tar.gz
+            -o /tmp/stategraph.tar.gz
+            && tar xzf /tmp/stategraph.tar.gz -C /usr/local/bin stategraph
+            && chmod +x /usr/local/bin/stategraph
+            && rm -f /tmp/stategraph.tar.gz
+        run_on: always
+
+workflows:
+  - tag_query: "dir:sg"
+    engine:
+      name: stategraph
+
+stacks:
+  names:
+    dev:
+      tag_query: "dir:dev"
+    staging:
+      tag_query: "dir:staging"
+      rules:
+        plan_after:
+          - dev
+        apply_after:
+          - dev
+    sg:
+      tag_query: "dir:sg"
+      rules:
+        apply_after:
+          - staging
