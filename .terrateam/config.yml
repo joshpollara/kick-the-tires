@@ -18,3 +18,14 @@ workflows:
   - tag_query: "dir:sg"
     engine:
       name: stategraph
+
+when_modified:
+  autoplan: false
+
+dirs:
+  st/prod/tf1:
+    tags: [tf1, prod, tf1tf2]
+  st/prod/tf2:
+    tags: [tf2, prod, tf1tf2]
+  st/prod/tf3:
+    tags: [tf3, prod]
