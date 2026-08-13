@@ -18,3 +18,8 @@ workflows:
   - tag_query: "dir:sg"
     engine:
       name: stategraph
+
+dirs:
+  tql2/app:
+    when_modified:
+      depends_on: 'dir:tql2/base'
