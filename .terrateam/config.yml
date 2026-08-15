@@ -14,7 +14,16 @@ hooks:
             && rm -f /tmp/stategraph.tar.gz
         run_on: always
 
+storage:
+  plans:
+    method: terrateam
+
 workflows:
+  - tag_query: "dir:dev"
+    storage:
+      plans:
+        method: none
+        unsafe_apply_without_plan: true
   - tag_query: "dir:sg"
     engine:
       name: stategraph
