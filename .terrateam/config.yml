@@ -14,19 +14,10 @@ hooks:
             && rm -f /tmp/stategraph.tar.gz
         run_on: always
 
-access_control:
-  enabled: true
-  plan_require_all_dirspace_access: true
-  policies:
-    - tag_query: "dir:dev"
-      plan: []
-    - tag_query: ""
-      plan: ["*"]
-
 notifications:
   summary:
     enabled: true
-    mode: pull_request
+    mode: header
 
 workflows:
   - tag_query: "dir:sg"
