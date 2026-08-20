@@ -1,5 +1,5 @@
 module "am" {
   source = "../modules"
 
-  null_resource_count = 4
+  null_resource_count = 9
 }
