@@ -16,8 +16,8 @@ hooks:
 
 notifications:
   summary:
-    enabled: true
-    mode: header
+    enabled: false
+    mode: pull_request
 
 workflows:
   - tag_query: "dir:sg"
