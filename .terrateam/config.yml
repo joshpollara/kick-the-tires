@@ -16,10 +16,12 @@ hooks:
 
 access_control:
   enabled: true
+  plan_require_all_dirspace_access: true
   policies:
     - tag_query: "dir:dev"
-      plan: ["user:nobody"]
+      plan: []
     - tag_query: ""
+      plan: ["*"]
 
 notifications:
   summary:
