@@ -14,14 +14,12 @@ hooks:
             && rm -f /tmp/stategraph.tar.gz
         run_on: always
 
-  plan:
-    post:
-      - type: gates
-        cmd:
-          - sh
-          - -c
-          - >-
-            echo '{"gates":[{"all_of":["user:joshpollara"],"token":"manual-check","name":"manual check"}]}'
+access_control:
+  enabled: true
+  policies:
+    - tag_query: "dir:dev"
+      plan: ["user:nobody"]
+    - tag_query: ""
 
 notifications:
   summary:
