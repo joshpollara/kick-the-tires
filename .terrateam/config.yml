@@ -16,7 +16,7 @@ hooks:
 
 notifications:
   summary:
-    enabled: false
+    enabled: true
     mode: pull_request
 
 workflows:
